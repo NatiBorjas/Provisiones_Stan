@@ -1,0 +1,26 @@
+.gif {
+    height: 164px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 10px 5px;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+}
+.cart-widget {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}

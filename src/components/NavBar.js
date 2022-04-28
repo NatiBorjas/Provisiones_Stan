@@ -1,7 +1,7 @@
 import React from 'react';
 import CartWidget from "./CartWidget"
 
-import './styles/NavBar.css';
+import '../styles/NavBar.css';
 
 const NavBar = () => {
     const stan = 'https://static.wikia.nocookie.net/monkeyisland/images/5/5c/StaninActionanimiert.gif';
@@ -12,7 +12,7 @@ const NavBar = () => {
             <nav>
                 <ul className="menu">
                     <li>
-                        <img src={stan} alt="stan" />
+                        <img src={stan} className="gif" alt="stan" />
                     </li>
                     <li>
                         <a href="/">Inicio</a>
