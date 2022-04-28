@@ -1,32 +1,31 @@
 import { useEffect, useState } from "react";
-import { Item } from "./Item"
+import { ItemCard } from "./Item"
 import { provisiones } from "../data/provisiones";
+import '../styles/ItemList.css';
 
 export const ItemList = () => {
-  
-  const [items, setProvisiones] = useState([]);
+
+  const [productos, setProvisiones] = useState([]);
 
   useEffect(() => {
-    const getProvisiones = new Promise((resolve, reject) => { 
-      
-      setTimeout( () => {
-        resolve(provisiones)
+    const getProvisiones = new Promise((resolve, reject) => {
+
+      setTimeout(() => {
+        resolve(provisiones);
       }, 5000);
     });
-    
-    getProvisiones.then( (result) => {
-      console.log("se completo la promesa", result);
+
+    getProvisiones.then((result) => {
       setProvisiones(result);
     }).catch(err => {
       console.log("Hubo un error");
-    })
+    });
   }, []);
 
 
   return (
-    <div>
-      {items.map(item => item.nombre)}
-      {/* <Item></Item> */}
+    <div className="card-container">
+      {productos.map(producto => <ItemCard key={producto.id} provisiones={producto} /> )}
     </div>
-  )
+  );
 }
