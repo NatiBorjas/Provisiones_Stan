@@ -3,10 +3,14 @@ export const ItemCard = ( { prod } ) => {
   
   return (
       <div className="item-card">
-        {/* <img src={prod.img}/> */}
-        <p>{prod.nombre}</p>
-        <p>$ {prod.precio}d</p>
-        <button className='btn'>Comprar</button>
+        <div className='img-card'>
+          <img src={prod.img} alt={prod.nombre}/>
+        </div>
+        <div className='Item-info'>
+          <p>{prod.nombre}</p>
+          <p>$ {prod.precio}d</p>
+          <button className='btn'>Comprar</button>
+        </div>
       </div>
   )
 }
