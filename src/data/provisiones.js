@@ -27,6 +27,6 @@ export const provisiones = [
     id: 5,
     nombre: "Muñeco Vodoo",
     precio: 250,
-    img: require("../assets/vodoodoll.png")
+    img: require("../assets/muñecovodoo.png")
   }
 ]

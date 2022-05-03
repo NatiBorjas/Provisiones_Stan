@@ -1,4 +1,5 @@
 import '../styles/Item.css';
+
 export const ItemCard = ( { prod } ) => {
   
   return (
