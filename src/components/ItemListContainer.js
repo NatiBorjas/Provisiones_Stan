@@ -10,9 +10,9 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         const getProvisiones = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(provisiones);
-            }, 2000);
+            setTimeout(() => {
+                resolve(provisiones);
+                }, 2000);
         });
 
         getProvisiones.then((result) => {

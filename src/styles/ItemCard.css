@@ -7,6 +7,7 @@
     border: 25px;
     background-color: black;
     align-items: center;
+    transition: all .2s ease-in-out;
 }
 
 .move:hover {
