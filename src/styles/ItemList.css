@@ -1,6 +1,7 @@
 .card-container {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    flex-flow: row wrap;
+    justify-content: center;
     margin: 15px;
 }

@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css';
-
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import './App.css';
 import ItemDetail from './components/ItemDetail';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer';
+import NavBar from './components/NavBar';
+import { Contacto } from "./components/Contacto";
+
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path='/category' element={<ItemListContainer/>}/>
           <Route path='/item' element={<ItemDetailContainer/>}/>
           <Route path='/items/:itemId' element={<ItemDetail/>}/>
-          <Route/>
+          <Route path='/contacto' element={<Contacto/>}/>
         </Routes>
       </BrowserRouter>
 

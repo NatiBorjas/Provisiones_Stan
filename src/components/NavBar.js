@@ -24,7 +24,7 @@ const NavBar = () => {
                         <Link to={'/category'}>Provisiones</Link>
                     </li>
                     <li>
-                        <a href='/'>Contacto</a>
+                        <Link to={'/contacto'}>Contacto</Link>
                     </li>
                     <li>
                         <CartWidget/>

@@ -25,8 +25,33 @@ export const provisiones = [
   },
   {
     id: 5,
-    nombre: "Muñeco Vodoo",
+    nombre: "Muñeco vodoo",
     precio: 250,
     img: require("../assets/muñecovodoo.png")
-  }
+  },
+  {
+    id: 6,
+    nombre: "Vestido rosa",
+    precio: 50,
+    img: require("../assets/vestido.png")
+  },
+  {
+    id: 7,
+    nombre: "Casi Grog",
+    precio: 200,
+    img: require("../assets/casigrog.png")
+  },
+  {
+    id: 8,
+    nombre: "Pollo con polea",
+    precio: 1000,
+    img: require("../assets/polloconpolea.png")
+  },
+  {
+    id: 9,
+    nombre: "Pala",
+    precio: 100,
+    img: require("../assets/pala.png")
+  },
+
 ]

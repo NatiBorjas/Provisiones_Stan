@@ -30,10 +30,10 @@ const ItemDetail = () => {
                 <h1>{item.nombre}</h1>
             </div>
             <div className="detail">
-                <img src={item.img} alt={item.nombre}/>
+                <img className="img-detail" src={item.img} alt={item.nombre} />
             </div>
             <div className="detail">
-                <Link to={'/'}><button className="btn">Volver...</button></Link>
+                <Link to={'/'}><button className="btn">Volver</button></Link>
             </div>
         </div>
         </>
