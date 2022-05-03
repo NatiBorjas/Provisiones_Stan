@@ -17,7 +17,6 @@ const ItemListContainer = () => {
 
         getProvisiones.then((result) => {
         setProvisiones(result);
-        console.log('Promesa cumplida exitosamente', result)
         })
     }, []);
 

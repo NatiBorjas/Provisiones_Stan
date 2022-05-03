@@ -1,4 +1,4 @@
-import { ItemCard } from "./Item"
+import { ItemCard } from "./ItemCard"
 import '../styles/ItemList.css';
 
 export const ItemList = ({ productos }) => {

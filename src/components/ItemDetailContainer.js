@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { provisiones } from "../data/provisiones";
 import ItemDetail from "./ItemDetail";
 
+
 const ItemDetailContainer = () => {
 
     const [items, setitems] = useState([]);

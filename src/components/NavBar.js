@@ -2,6 +2,7 @@ import React from 'react';
 import CartWidget from "./CartWidget"
 
 import '../styles/NavBar.css';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     const stan = 'https://static.wikia.nocookie.net/monkeyisland/images/5/5c/StaninActionanimiert.gif';
@@ -12,16 +13,18 @@ const NavBar = () => {
             <nav>
                 <ul className="menu">
                     <li>
-                        <img src={stan} className="gif" alt="stan" />
+                        <Link to={'/'}>
+                            <img src={stan} className="gif" alt="stan" />
+                        </Link>
                     </li>
                     <li>
-                        <a href="/">Inicio</a>
+                        <Link to={'/'}>Inicio</Link>
                     </li>
                     <li>
-                        <a href="/">Provisiones</a>
+                        <Link to={'/category'}>Provisiones</Link>
                     </li>
                     <li>
-                        <a href="/">Contacto</a>
+                        <a href='/'>Contacto</a>
                     </li>
                     <li>
                         <CartWidget/>

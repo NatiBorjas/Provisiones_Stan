@@ -9,10 +9,15 @@
     align-items: center;
 }
 
+.move:hover {
+    transform: scale(120%);
+}
+
 .img-card, .item-info {
     padding: 5px;
     margin: 5px;
 }
+
 
 .btn {
     font-size: 16px;

@@ -1,9 +1,9 @@
-import '../styles/Item.css';
+import '../styles/ItemCard.css';
 
 export const ItemCard = ( { prod } ) => {
   
   return (
-      <div className="item-card">
+      <div className="item-card move" id={prod.id}>
         <div className='img-card'>
           <img src={prod.img} alt={prod.nombre}/>
         </div>
