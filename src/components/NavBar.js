@@ -1,8 +1,8 @@
 import React from 'react';
-import CartWidget from "./CartWidget"
-
-import '../styles/NavBar.css';
 import { Link } from 'react-router-dom';
+import CartWidget from "./CartWidget"
+import '../styles/NavBar.css';
+
 
 const NavBar = () => {
     const stan = 'https://static.wikia.nocookie.net/monkeyisland/images/5/5c/StaninActionanimiert.gif';
@@ -21,7 +21,7 @@ const NavBar = () => {
                         <Link to={'/'}>Inicio</Link>
                     </li>
                     <li>
-                        <Link to={'/category'}>Provisiones</Link>
+                        <Link to={'/items'}>Provisiones</Link>
                     </li>
                     <li>
                         <Link to={'/contacto'}>Contacto</Link>

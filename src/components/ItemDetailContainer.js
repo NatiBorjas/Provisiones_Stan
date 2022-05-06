@@ -1,31 +1,30 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { provisiones } from "../data/provisiones";
-import ItemDetail from "./ItemDetail";
+import { ItemDetail } from "./ItemDetail";
 
 
 const ItemDetailContainer = () => {
 
-    const [items, setitems] = useState([]);
+    const [item, setItem] = useState({});
+    const { itemId } = useParams();
 
     useEffect(() => {
-        const getItems = new Promise((resolve,reject) => {
+        const getItemDetail = new Promise((resolve) => {
             setTimeout(() => {
-                resolve(provisiones);
-            }, 2000);
+                resolve(provisiones.find( i => i.id == itemId ))
+            }, 1000)
         });
-
-        getItems.then((result)=> {
-            setitems(result);
-            console.log('Promesa cumplida exitosamente', result)
-        })
-    
-    }, []);
-    
-
+            
+            getItemDetail.then((result) => {
+                setItem(result);
+            })
+        }, [itemId]);
+        
 
     return (
         <div className="detail-container">
-            <ItemDetail item={items}/>
+            <ItemDetail key={item.id} item={item}/>
         </div>
     )
 }

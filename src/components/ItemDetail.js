@@ -1,28 +1,8 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom"
-import { provisiones } from "../data/provisiones";
-import {  } from "../styles/ItemDetail.css";
+import { Link} from "react-router-dom"
+import "../styles/ItemDetail.css";
 
-const ItemDetail = () => {
-
-    const { itemId } = useParams();
-    const [item, setItem] = useState({});
-
-    useEffect(() => {
-        const getItemDetail = new Promise((resolve,reject) => {
-                setTimeout(() => {
-                    resolve( provisiones.find( i => i.id == itemId ))
-                }, 1000)
-            });
-            
-            getItemDetail.then((result) => {
-                setItem(result);
-            // }).catch((err)=> {
-            //     console.log('Arrgghh....ese item no existe', err);
-            });
-        }, [itemId]);
-        
-        
+export const ItemDetail = ( {item} ) => {
+    
     return (
         <>
         <div className="item-detail">
@@ -42,4 +22,3 @@ const ItemDetail = () => {
         </>
     )
 }
-export default ItemDetail
