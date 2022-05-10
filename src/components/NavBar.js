@@ -24,6 +24,18 @@ const NavBar = () => {
                         <Link to={'/items'}>Provisiones</Link>
                     </li>
                     <li>
+                        Categorias
+                        <div>
+                            <ul>
+                                <li><Link to={'/items'}>Todas</Link></li>
+                                <li><Link to={'/category/alimentos'}>Alimentos</Link></li>
+                                <li><Link to={'/category/armas'}>Armas</Link></li>
+                                <li><Link to={'/category/herramientas'}>Herramientas</Link></li>
+                                <li><Link to={'/category/varios'}>Varios</Link></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
                         <Link to={'/contacto'}>Contacto</Link>
                     </li>
                     <li>
