@@ -29,7 +29,7 @@ export const ItemDetail = ( {item} ) => {
                     </button>
                 </Link>
                 ) : (
-                <ItemCount cantidad={item.cantidad} onAdd={onAdd}></ItemCount>) 
+                <ItemCount id={item.id} cantidad={item.cantidad} onAdd={onAdd}></ItemCount>) 
             }
 
             <div className="detail">
