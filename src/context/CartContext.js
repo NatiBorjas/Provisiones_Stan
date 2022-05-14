@@ -6,20 +6,20 @@ export const useCartContext = () => useContext(CartContext);
 export const CartContextProvider = ({children}) => {
 
     const [carrito, setCarrito] = useState([]);
-    const enCarrito = (id) => carrito.find(prod => prod.id == id);
+
+    const enCarrito = (id) => carrito.find((prod) => prod.id == id);
 
     const agregarAlCarrito = (prod, cantidad) => {
         const nuevoCarrito = [...carrito];
         const productoEnCarrito = enCarrito(prod.id);
 
         if (productoEnCarrito) {
-            nuevoCarrito[nuevoCarrito.findIndex((producto) => producto.id == productoEnCarrito.id)].quatity += cantidad;
-
-            setCarrito(nuevoCarrito);
+            setCarrito(nuevoCarrito.find((producto) => producto.id == productoEnCarrito.id));
             return
         }
-        prod.quantity = cantidad;
-        setCarrito([...nuevoCarrito, prod])
+        cantidad = prod.cantidad + 1;
+        setCarrito([...nuevoCarrito, cantidad])
+        console.log(nuevoCarrito);
     };
 
     const eliminarDelCarrito = (prod) => {
@@ -35,8 +35,6 @@ export const CartContextProvider = ({children}) => {
     }
     
     const eliminarCarrito = () => setCarrito([]);
-
-    console.log(carrito);
 
     return (
         <CartContext.Provider value={{carrito, agregarAlCarrito, eliminarDelCarrito, eliminarCarrito, setCarrito}}>
