@@ -19,7 +19,7 @@ export const CartContextProvider = ({children}) => {
         }
         cantidad = prod.cantidad + 1;
         setCarrito([...nuevoCarrito, cantidad])
-        console.log(nuevoCarrito);
+        console.log(carrito);
     };
 
     const eliminarDelCarrito = (prod) => {

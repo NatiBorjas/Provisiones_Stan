@@ -19,7 +19,7 @@ export const AppContextProvider = ({children}) => {
             setProvisiones(result);
             console.log(result)
         })
-    }, []);
+    });
 
     return (
         <AppContext.Provider value={{productos}}>
