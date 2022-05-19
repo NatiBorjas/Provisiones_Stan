@@ -22,7 +22,7 @@ export const ItemCount = ({onAdd, id}) => {
     };
 
     const handleClick = (id, cantidad) => {
-        const findItem = productos.find((producto) => producto.id == id)
+        const findItem = productos.find((producto) => producto.id === id)
         if (!findItem) {
             alert("No se encuentra")
             return

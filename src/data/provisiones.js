@@ -107,5 +107,4 @@ export const provisiones = [
     img: require("../assets/cabeza.png"),
     info: "Cabeza del Navegante Sepp, que navegó con el capitan Dread.\nFue capturado por los canibales en Monkey Island.\nDe gran ayuda para navegar por el laberinto de lava de Monkey Island."
   },
-
 ]

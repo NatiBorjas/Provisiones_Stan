@@ -17,7 +17,7 @@ export const AppContextProvider = ({children}) => {
 
         getProvisiones.then((result) => {
             setProvisiones(result);
-            console.log(result)
+            // console.log(result)
         })
     });
 
