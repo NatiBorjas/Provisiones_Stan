@@ -1,43 +1,47 @@
 import { createContext, useContext, useState } from "react"
 
-const CartContext = createContext();
+const CartContext = createContext({
+    carrito: [],
+    agregarAlCarrito: () => {}
+});
+
 export const useCartContext = () => useContext(CartContext);
 
-export const CartContextProvider = ({children}) => {
-
+export const CartContextProvider = ( {children} ) => {
+    
     const [carrito, setCarrito] = useState([]);
+    const itemEnCarrito = (id) => {
+        return carrito.some((item) => item.id === id)
+    }
 
-    const enCarrito = (id) => carrito.find((prod) => prod.id === id);
+    const agregarAlCarrito = (item, cantidad) => {
+        console.log({item, cantidad});
+        setCarrito([{...item, cantidad}])
+        // if (itemEnCarrito(item.id)) {
+        //     return setCarrito(
+        //         carrito.map((prod) => prod.id === item.id ? { ...prod, cantidad: prod.cantidad + cantidad } : prod)
+        //     )
+        // }
+        // setCarrito([...carrito, {...item, cantidad}]);
 
-    const agregarAlCarrito = (prod, cantidad) => {
-        const nuevoCarrito = [...carrito];
-        const productoEnCarrito = enCarrito(prod.id);
-
-        if (productoEnCarrito) {
-            setCarrito(nuevoCarrito.find((producto) => producto.id === productoEnCarrito.id));
-            return
-        }
-        cantidad = prod.cantidad + 1;
-        setCarrito([...nuevoCarrito, cantidad])
-        console.log(carrito);
     };
+    console.log("Carrito", carrito);
 
-    const eliminarDelCarrito = (prod) => {
+    const eliminarDelCarrito = (item) => {
         const nuevoCarrito = [...carrito];
-        const productoEnCarrito = enCarrito(prod.id);
+        const productoEnCarrito = itemEnCarrito(item.id);
+        const eliminarProducto = nuevoCarrito.filter((producto) => producto.id !== item.id);
 
         if (!productoEnCarrito) {
-            return
+            return "En carrito"
         }
-        const eliminarProducto = nuevoCarrito.filter((producto) => producto.id !== prod.id);
         setCarrito(eliminarProducto)
-
     }
     
     const eliminarCarrito = () => setCarrito([]);
 
     return (
-        <CartContext.Provider value={{carrito, agregarAlCarrito, eliminarDelCarrito, eliminarCarrito, setCarrito}}>
+        <CartContext.Provider value={{carrito, agregarAlCarrito, eliminarDelCarrito, eliminarCarrito}}>
             {children}
         </CartContext.Provider>
     )

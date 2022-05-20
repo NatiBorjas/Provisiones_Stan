@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Link} from "react-router-dom"
+import { useCartContext } from "../context/CartContext";
 import "../styles/ItemDetail.css";
 import { ItemCount } from "./ItemCount";
 
 export const ItemDetail = ( {item} ) => {
     
     const [finalizar, setFinalizar] = useState(false)
+    const { agregarAlCarrito } = useCartContext();
 
     const onAdd = (cont) => {
         setFinalizar(true);
-        console.log(cont);
+        agregarAlCarrito(item, cont);
     };
 
     return (

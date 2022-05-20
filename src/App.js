@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import './App.css';
 import { CartContextProvider } from './context/CartContext';
 import { AppContextProvider } from './context/AppContext';
+import { Cart } from './components/Cart';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
               <Route path='/items/:itemId' element={<ItemDetailContainer/>}/>
               <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
               <Route path='/contacto' element={<Contacto/>}/>
-              {/* <Route path='/cart'/> */}
+              <Route path='/cart' element={<Cart/>}/>
             </Routes>
           </BrowserRouter>
         </CartContextProvider>
