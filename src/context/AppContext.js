@@ -1,27 +1,28 @@
-import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { createContext, useContext, useEffect, useState } from "react"
+import { provisiones } from "../data/provisiones";
 
 const AppContext = createContext();
 export const UseAppContext = () => useContext(AppContext);
 
 export const AppContextProvider = ({children}) => {
 
-    const [provisiones, setProvisiones] = useState([]);
+    const [productos, setProvisiones] = useState([]);
 
     useEffect(() => {
-        const db = getFirestore();
-        const provisionesCollection = collection(db, "provisiones");
-        getDocs(provisionesCollection).then( snapshot => {
-                if (snapshot.size > 0) {
-                    const provisionesData = snapshot.docs.map(doc => ({ "id": doc.id, ...doc.data()}));
-                    return setProvisiones(provisionesData);
-                }
-            })
-    }, []);
+        const getProvisiones = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(provisiones);
+            }, 1000);
+        });
 
+        getProvisiones.then((result) => {
+            setProvisiones(result);
+
+        })
+    });
 
     return (
-        <AppContext.Provider value={{provisiones}}>
+        <AppContext.Provider value={{productos}}>
             {children}
         </AppContext.Provider>
     )

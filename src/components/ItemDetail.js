@@ -11,7 +11,7 @@ export const ItemDetail = ( {item} ) => {
 
     const onAdd = (cont) => {
         setFinalizar(true);
-        agregarAlCarrito(item, cont);
+        agregarAlCarrito(item, cont)
     };
 
     return (
@@ -27,11 +27,11 @@ export const ItemDetail = ( {item} ) => {
             {finalizar ? (
                 <Link to={'/cart'}>
                     <button className="btn">
-                        Finalizar Compra
+                        Ir al carrito
                     </button>
                 </Link>
                 ) : (
-                <ItemCount id={item.id} cantidad={item.cantidad} onAdd={onAdd}></ItemCount>) 
+                <ItemCount onAdd={onAdd}></ItemCount>) 
             }
 
             <div className="detail">

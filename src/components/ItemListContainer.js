@@ -4,43 +4,41 @@ import { ItemList } from './ItemList';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import '../styles/ItemListContainer.css';
-import { UseAppContext } from '../context/AppContext';
+
 
 
 const ItemListContainer = () => {
 
     const [productos, setProvisiones] = useState([]);
     const {categoryId} = useParams();
-    const {provisiones} = UseAppContext();
+
 
     useEffect(() => {
 
-        if (!categoryId) { 
-            return setProvisiones(provisiones);
-            } else {
-                setProvisiones(provisiones.filter(i => i.categoria === categoryId))
-            }
-
-
-        // getProvisiones()
+        // if (!categoryId) { 
+        //     return setProvisiones(provisiones);
+        //     } else {
+        //         setProvisiones(provisiones.filter(i => i.categoria === categoryId))
+        //     }
+        getProvisiones();
     }, [categoryId]);
     
-    // const getProvisiones = () =>{
+    const getProvisiones = () =>{
 
-    //     const db = getFirestore();
-    //     const provisiones = collection(db, "provisiones");
-    //     getDocs(provisiones)
-    //         .then(snapshot => {
-    //             if (snapshot.size > 0) {
-    //                 const provisionesData = snapshot.docs.map(doc => ({ "id": doc.id, ...doc.data()}));
-    //                 if (!categoryId) { 
-    //                     return setProvisiones(provisionesData);
-    //                     } else {
-    //                         setProvisiones(provisionesData.filter(i => i.categoria === categoryId))
-    //                     }
-    //             }
-    //         })
-    // };
+        const db = getFirestore();
+        const provisiones = collection(db, "provisiones");
+        getDocs(provisiones)
+            .then(snapshot => {
+                if (snapshot.size > 0) {
+                    const provisionesData = snapshot.docs.map(doc => ({ "id": doc.id, ...doc.data()}));
+                    if (!categoryId) { 
+                        return setProvisiones(provisionesData);
+                        } else {
+                            setProvisiones(provisionesData.filter(i => i.categoria === categoryId))
+                        }
+                }
+            })
+    };
 
 
     return (
