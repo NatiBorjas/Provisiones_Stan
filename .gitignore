@@ -21,6 +21,7 @@
 .README_ReactApp.node_modules
 .reportWebVitals.js.
 .setupTests.js
+.gitignore
 
 npm-debug.log*
 yarn-debug.log*
