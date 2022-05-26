@@ -16,14 +16,16 @@ export const ItemCount = ({onAdd}) => {
     };
 
     return (
-        <div>
-            <button className="btn btn-remove" onClick={eliminarItem}>
-                -
-            </button>
-            <span>{cont}</span>
-            <button className="btn btn-add" onClick={agregarItem}>
-                +
-            </button>
+        <div className="contador">
+            <div>
+                <button className="btn btn-remove" onClick={eliminarItem}>
+                    -
+                </button>
+                <span>{cont}</span>
+                <button className="btn btn-add" onClick={agregarItem}>
+                    +
+                </button>
+            </div>
             <div>
                 <button className="btn btn-addToCart" onClick={() => onAdd(cont)}>
                     Agregar al carrito

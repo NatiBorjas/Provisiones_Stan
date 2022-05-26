@@ -17,6 +17,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.README_ReactApp.node_modules
+.reportWebVitals.js.
+.setupTests.js
 
 npm-debug.log*
 yarn-debug.log*

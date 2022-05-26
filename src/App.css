@@ -48,3 +48,8 @@ ul li{
 #stan {
   border: solid 25px black;
 }
+
+.contador {
+  display: flex;
+  align-items: center;
+}
