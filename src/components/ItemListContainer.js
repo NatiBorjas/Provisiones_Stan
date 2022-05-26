@@ -11,15 +11,9 @@ const ItemListContainer = () => {
 
     const [productos, setProvisiones] = useState([]);
     const {categoryId} = useParams();
-
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-
-        // if (!categoryId) { 
-        //     return setProvisiones(provisiones);
-        //     } else {
-        //         setProvisiones(provisiones.filter(i => i.categoria === categoryId))
-        //     }
         getProvisiones();
     }, [categoryId]);
     
@@ -29,6 +23,7 @@ const ItemListContainer = () => {
         const provisiones = collection(db, "provisiones");
         getDocs(provisiones)
             .then(snapshot => {
+                setLoading(false)
                 if (snapshot.size > 0) {
                     const provisionesData = snapshot.docs.map(doc => ({ "id": doc.id, ...doc.data()}));
                     if (!categoryId) { 
@@ -44,7 +39,7 @@ const ItemListContainer = () => {
     return (
         <>
             <div className="item-container">
-                <ItemList productos={productos}/>
+                <ItemList productos={productos} loading={loading}/>
             </div>
         </>
     )

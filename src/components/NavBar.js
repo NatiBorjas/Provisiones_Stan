@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import CartWidget from "./CartWidget"
 import '../styles/NavBar.css';
 
+export const stan = 'https://static.wikia.nocookie.net/monkeyisland/images/5/5c/StaninActionanimiert.gif';
 
 const NavBar = () => {
-    const stan = 'https://static.wikia.nocookie.net/monkeyisland/images/5/5c/StaninActionanimiert.gif';
-
+    
     return (
         <>
         <header className="nav-container">

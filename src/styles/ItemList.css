@@ -5,3 +5,10 @@
     justify-content: center;
     margin: 15px;
 }
+
+.loader {
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    flex-direction: column;
+}
