@@ -8,6 +8,7 @@ import './App.css';
 import { CartContextProvider } from './context/CartContext';
 import { AppContextProvider } from './context/AppContext';
 import { Cart } from './components/Cart';
+import FormularioCompra from './components/FormularioCompra';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
               <Route path='/contacto' element={<Contacto/>}/>
               <Route path='/cart' element={<Cart/>}/>
+              <Route path='/finalizarcompra' element={<FormularioCompra/>} />
             </Routes>
           </BrowserRouter>
         </CartContextProvider>

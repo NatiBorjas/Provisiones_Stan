@@ -4,7 +4,7 @@ import '../styles/Carrito.css';
 
 
 export const Cart = () => {
-    const { carrito, totalCarrito, eliminarDelCarrito, eliminarCarrito } = useCartContext();
+    const { carrito, totalCarrito, eliminarDelCarrito, vaciarCarrito} = useCartContext();
 
     return (
         <div>
@@ -36,7 +36,7 @@ export const Cart = () => {
                                         <p>Precio D$: {item.precio}</p>
                                     </div>
                                     <div>
-                                        <p>Total D$: {item.precio * item.cant}</p>
+                                        <p>Total D$: {item.cant * item.precio}</p>
                                     </div>
                                     <div>
                                         <div className="eliminar-item">
@@ -53,12 +53,14 @@ export const Cart = () => {
                                     <h1>Total Carrito D$: {totalCarrito()}</h1>
                                 </div>
                                 <div className="btn-finalizar">
-                                    <button className="btn">Finalizar Compra</button>
+                                    <Link to={'/finalizarcompra'}>
+                                        <button className="btn">Finalizar Compra</button>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="vaciar-carrito">
                                 <div >
-                                    <button className="btn" onClick={() => eliminarCarrito()}>Vaciar Carrito</button>
+                                    <button className="btn" onClick={() => vaciarCarrito()}>Vaciar Carrito</button>
                                 </div>
                             </div>
                         </div>
