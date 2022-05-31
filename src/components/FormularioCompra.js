@@ -1,38 +1,23 @@
-import { useCartContext } from "../context/CartContext";
-import { Input } from "./Input";
+import "../styles/Input.css";
 
 
 const FormularioCompra = () => {
 
-    const { carrito, totalCarrito} = useCartContext();
-
-    const itemsCarrito = carrito.map(i => ({nombre: i.nombre, precio: i.precio, cant: i.cant }))
-
-    const saveCarrito = () => {
-        const user = {
-            name: 'Juana',
-            phone: '454554545',
-            email: 'juana@gmail.com',
-        };
-        const orden = {
-            cliente: user,
-            items: itemsCarrito,
-            total: totalCarrito(),
-        }
-        console.log("Orden de compra", orden);
-    }
-
     return (
-        <>
-            <div>
-                <Input/>
-            </div>
-            {/* <div>
-                <button className="btn" onClick={saveCarrito}>
-                    Realizar pago
-                </button>
-            </div> */}
-        </>
+        <div id="form-container">
+            <form id="form-compra">
+                <fieldset>
+                    <label id="name-label">Nombre y Apellido <input id="name" type="text" placeholder="Ingresa tu nombre completo" /></label>
+                    <label id="phone-label">Telefono <input id="phone" type="text" placeholder="Ingresa tu n° de telefono" /></label>
+                    <label id="email-label">E-mail <input id="email" type="email" placeholder="Ingresa tu email" /></label>
+                </fieldset>
+                <fieldset>
+                    <p>Agrega comentarios, consultas, saludos...</p>
+                    <textarea rows="4" cols="30" placeholder="We're having a real moment here..."></textarea>
+                </fieldset>
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
     )
 }
 export default FormularioCompra

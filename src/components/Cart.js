@@ -6,6 +6,22 @@ import '../styles/Carrito.css';
 export const Cart = () => {
     const { carrito, totalCarrito, eliminarDelCarrito, vaciarCarrito} = useCartContext();
 
+    const itemsCarrito = carrito.map(i => ({nombre: i.nombre, precio: i.precio, cant: i.cant }))
+
+    const saveCarrito = () => {
+        const user = {
+            name: 'Juana',
+            phone: '454554545',
+            email: 'juana@gmail.com',
+        };
+        const orden = {
+            cliente: user,
+            items: itemsCarrito,
+            total: totalCarrito(),
+        }
+        console.log("Orden de compra", orden);
+    }
+
     return (
         <div>
             {carrito.length === 0 ? (
@@ -53,7 +69,7 @@ export const Cart = () => {
                                 </div>
                                 <div className="btn-finalizar">
                                     <Link to={'/finalizarcompra'}>
-                                        <button className="btn">Finalizar Compra</button>
+                                        <button className="btn" onClick={saveCarrito}>Finalizar Compra</button>
                                     </Link>
                                 </div>
                             </div>
