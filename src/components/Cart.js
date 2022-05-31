@@ -46,7 +46,6 @@ export const Cart = () => {
                                 </div> 
                             )
                         })}
-                        </div>
                         <div className="contenedor-total item-card">
                             <div className="total-carrito">
                                 <div>
@@ -63,6 +62,7 @@ export const Cart = () => {
                                     <button className="btn" onClick={() => vaciarCarrito()}>Vaciar Carrito</button>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 ) 

@@ -3,9 +3,10 @@ import { Input } from "./Input";
 
 
 const FormularioCompra = () => {
+
     const { carrito, totalCarrito} = useCartContext();
 
-    // const itemsCarrito = carrito.map()
+    const itemsCarrito = carrito.map(i => ({nombre: i.nombre, precio: i.precio, cant: i.cant }))
 
     const saveCarrito = () => {
         const user = {
@@ -13,18 +14,12 @@ const FormularioCompra = () => {
             phone: '454554545',
             email: 'juana@gmail.com',
         };
-
         const orden = {
             cliente: user,
-            items: [{
-                id: '',
-                nombre: '',
-                precio: '',
-            }],
+            items: itemsCarrito,
             total: totalCarrito(),
         }
         console.log("Orden de compra", orden);
-        
     }
 
     return (
@@ -32,11 +27,11 @@ const FormularioCompra = () => {
             <div>
                 <Input/>
             </div>
-            <div>
+            {/* <div>
                 <button className="btn" onClick={saveCarrito}>
                     Realizar pago
                 </button>
-            </div>
+            </div> */}
         </>
     )
 }
