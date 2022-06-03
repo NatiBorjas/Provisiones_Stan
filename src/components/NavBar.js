@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CartWidget from "./CartWidget"
+import CartWidget from "./CartWidget";
+import { useCartContext } from "../context/CartContext";
 import '../styles/NavBar.css';
 
 export const stan = 'https://static.wikia.nocookie.net/monkeyisland/images/5/5c/StaninActionanimiert.gif';
 
 const NavBar = () => {
-    
+    const { carrito } = useCartContext();
     return (
         <>
         <header className="nav-container">
@@ -36,9 +37,11 @@ const NavBar = () => {
                         <Link to={'/contacto'}>Contacto</Link>
                     </li>
                     <li>
-                        <Link to={'/cart'}>
-                            <CartWidget/>
-                        </Link>
+                        {carrito.length === 0 ? "" :
+                            <Link to={'/cart'}>
+                                <CartWidget/>
+                            </Link>
+                        }
                     </li>
                 </ul>
             </nav>

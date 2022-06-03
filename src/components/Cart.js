@@ -36,7 +36,8 @@ export const Cart = () => {
                 </div>                
                 ) : 
                 ( 
-                    checkout ? <FormularioCompra orden={orden}/> : 
+                checkout ? <FormularioCompra orden={orden}/>
+                    : 
                     <div className="carrito-container">
                         <div className="carrito">
                             {carrito.map(item => {
@@ -72,11 +73,9 @@ export const Cart = () => {
                                         <h1>Total Carrito D$: {totalCarrito()}</h1>
                                     </div>
                                     <div className="btn-finalizar">
-                                        <button className="btn" onClick={saveCarrito}>Finalizar Compra</button>
-                                        {/* <Link to={'/finalizarcompra'}>
+                                        {/* <Link to={'/checkout'}> */}
                                             <button className="btn" onClick={saveCarrito}>Finalizar Compra</button>
-                                            {checkout && <FormularioCompra orden={orden}/>}
-                                        </Link> */}
+                                        {/* </Link> */}
                                     </div>
                                 </div>
                                 <div className="vaciar-carrito">

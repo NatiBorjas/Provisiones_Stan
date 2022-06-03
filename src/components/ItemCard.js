@@ -10,7 +10,7 @@ export const ItemCard = ( { prod } ) => {
           </div>
         <div className='Item-info'>
           <p>{prod.nombre}</p>
-          <p>$ {prod.precio}d</p>
+          <p>D$ {prod.precio}</p>
           <Link to={`/items/${prod.id}`}>
           <button className='btn'>+ Info</button>
           </Link>

@@ -3,6 +3,7 @@ import { useEffect, useState, } from "react";
 import { ItemList } from './ItemList';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { stan } from "./NavBar";
 import '../styles/ItemListContainer.css';
 
 
@@ -38,9 +39,16 @@ const ItemListContainer = () => {
 
     return (
         <>
-            <div className="item-container">
-                <ItemList productos={productos} loading={loading}/>
-            </div>
+            {loading ? 
+                <div className="loader">
+                    <img src={stan} alt="stan" />
+                    <p>Cargando...</p>
+                </div>
+                :
+                <div className="item-container">
+                    <ItemList productos={productos} loading={loading}/>
+                </div>
+            }
         </>
     )
 }

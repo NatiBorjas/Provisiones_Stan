@@ -36,27 +36,17 @@ const FormularioCompra = ( { orden } ) => {
         <div id="form-container">
             <form id="form-compra" onSubmit={onSubmit}>
                 <fieldset>
-                    <label id="name-label">Nombre y Apellido <input id="name" type="text" placeholder="Ingresa tu nombre completo"  onChange={event => onInputChange(event)}/></label>
-                    <label id="phone-label">Telefono <input id="phone" type="text" placeholder="Ingresa tu n° de telefono" onChange={event => onInputChange(event)}/></label>
-                    <label id="email-label">E-mail <input id="email" type="email" placeholder="Ingresa tu email" onChange={event => onInputChange(event)}/></label>
+                    <label id="name-label">Nombre y Apellido <input id="name" type="text" placeholder="Ingresa tu nombre completo"  onChange={event => onInputChange(event)} required/></label>
+                    <label id="phone-label">Telefono <input id="phone" type="text" placeholder="Ingresa tu n° de telefono" onChange={event => onInputChange(event)} required/></label>
+                    <label id="email-label">E-mail <input id="email" type="email" placeholder="Ingresa tu email" onChange={event => onInputChange(event)} required/></label>
                 </fieldset>
                 <input type="submit" value="Enviar"/>
             </form>
         </div>        
-        // <div id="form-container">
-        //     <form id="form-compra">
-        //         <fieldset>
-        //             <label id="name-label">Nombre y Apellido <input id="name" type="text" placeholder="Ingresa tu nombre completo" /></label>
-        //             <label id="phone-label">Telefono <input id="phone" type="text" placeholder="Ingresa tu n° de telefono" /></label>
-        //             <label id="email-label">E-mail <input id="email" type="email" placeholder="Ingresa tu email" /></label>
-        //         </fieldset>
         //         <fieldset>
         //             <p>Agrega comentarios, consultas, saludos...</p>
         //             <textarea rows="4" cols="30" placeholder="We're having a real moment here..."></textarea>
         //         </fieldset>
-        //         <input type="submit" value="Enviar" />
-        //     </form>
-        // </div>
     )
 }
 export default FormularioCompra
