@@ -10,8 +10,13 @@ export const ItemDetail = ( {item} ) => {
     const { agregarAlCarrito } = useCartContext();
 
     const onAdd = (cont) => {
+
+        if (cont >= 1 ) {
         setFinalizar(true);
-        agregarAlCarrito(item, cont)
+        agregarAlCarrito(item, cont)            
+        } else {
+            alert("Ingrese una cantidad")
+        }
     };
 
     return (

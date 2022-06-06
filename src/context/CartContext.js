@@ -12,12 +12,11 @@ export const CartContextProvider = ( {children} ) => {
     }
 
     const agregarAlCarrito = (item, cant) => {
-        
         const itemAlCarrito = {...item, cant: cant};
             if (itemEnCarrito(item.id)) {
-                    
                     const nuevoCarrito = [...carrito];
                     const encontrado = nuevoCarrito.findIndex((prod) => prod.id === item.id);
+                    
                     nuevoCarrito[encontrado].cant += cant;
                     setCarrito(nuevoCarrito);
                 } else {

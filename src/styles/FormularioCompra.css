@@ -1,3 +1,4 @@
+/*Formulario*/
 #form-container {
     width: 100%;
     margin-top: 45px;
@@ -46,4 +47,19 @@ input[type="submit"] {
     padding: 8px;
     background-color: #00FFFF;
     color: black;
+}
+
+/* Resumen de Compra*/
+
+.resumen-container {
+    display: flex;
+    margin: 15px 50px;
+    max-width: auto;
+}
+
+.resumen-item {
+    flex-direction: column;
+    margin: 15px;
+    padding: 10px 20px;
+    align-items: center;
 }
