@@ -54,7 +54,8 @@ input[type="submit"] {
 .resumen-container {
     display: flex;
     margin: 15px 50px;
-    max-width: auto;
+    justify-content: center;
+
 }
 
 .resumen-item {

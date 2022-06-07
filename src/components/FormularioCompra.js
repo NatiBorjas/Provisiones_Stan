@@ -4,11 +4,10 @@ import "../styles/FormularioCompra.css";
 import { useCartContext } from "../context/CartContext";
 
 
-const FormularioCompra = ( ) => {
+const FormularioCompra = () => {
 
     const { vaciarCarrito, carrito} = useCartContext();
-    const itemsCarrito = carrito.map(i => ({nombre: i.nombre, precio: i.precio, cant: i.cant }));
-
+    
     const [ user, setUser] = useState({
         name: "",
         phone: "",
@@ -19,6 +18,7 @@ const FormularioCompra = ( ) => {
         const db = getFirestore();
         const {id} = await addDoc(collection(db, "pedidos"), pedidos)
         console.log(id);
+        return alert(`Su pedido fue recibido exitosamente. La orden es: ${id}`)
     }
 
     function onInputChange(e){
@@ -29,7 +29,8 @@ const FormularioCompra = ( ) => {
     };
 
     function onSubmit(e) {
-        // e.preventDefault();
+        e.preventDefault();
+        const itemsCarrito = carrito.map(i => ({nombre: i.nombre, precio: i.precio, cant: i.cant }));
         saveToFirestore({user, itemsCarrito});
         vaciarCarrito();
     };
