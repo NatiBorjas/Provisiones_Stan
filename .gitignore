@@ -19,6 +19,7 @@
 .env.test.local
 .env.production.local
 .README_ReactApp.node_modules
+.README_ReactApp.md
 .reportWebVitals.js.
 .setupTests.js
 .gitignore
