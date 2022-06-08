@@ -19,7 +19,6 @@ const ItemListContainer = () => {
     }, [categoryId]);
     
     const getProvisiones = () =>{
-
         const db = getFirestore();
         const provisiones = collection(db, "provisiones");
         getDocs(provisiones)
