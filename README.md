@@ -6,15 +6,15 @@
 
 **Descripción**
 
-Proyecto basado en uno de mis videojuegos favoritos: :floppy_disk: ***Monkey Island 2: LeChuck's Revenge***.
+💾 Proyecto basado en uno de mis videojuegos favoritos: ***Monkey Island 2: LeChuck's Revenge*** 🐒 🏝️.
 
-Se trata de una tienda online para Piratas :pirate_flag: , del famoso vendedor *Stan S. Stanman*.
+🏴‍☠️ Se trata de una tienda online para Piratas , del famoso vendedor ***Stan S. Stanman***.
 
-Los precios estan en Doblones, la moneda vigente en el mercado.
+💰 Los precios estan en Doblones, la moneda vigente en el mercado.
 
 Encontraras la mejor oferta en productos que todx pirata necesita! 
 
-A llenar el carrito! :shopping_cart:
+🛒 A llenar el carrito! 
 
 
 ---
@@ -27,7 +27,7 @@ A llenar el carrito! :shopping_cart:
 * **Tutor :**  Juan Cereceda
 * **Estudiante / Developer :**  *Natalia Borjas (a.k.a.: GearLara) [Contacto](https://github.com/NatiBorjas/Provisiones_Stan#contacto)*
 * **Proyecto Final - Deploy en Vercel:** https://provisiones-stan.vercel.app/
-* **Repositorio:** :octocat: https://github.com/NatiBorjas/Provisiones_Stan
+* **Repositorio:** https://github.com/NatiBorjas/Provisiones_Stan :octocat:
 
 ---
 ## ***Librerías y Frameworks***
@@ -37,7 +37,7 @@ A llenar el carrito! :shopping_cart:
 * **Sweetalert**
 * **Fontawesome**
 
-## ***Dependencias***
+## ***Front/Backend***
 
 * **Firebase** 
 * **Vercel** 
@@ -48,10 +48,17 @@ A llenar el carrito! :shopping_cart:
 
 ## ***Ejecución***
 
-:arrow_forward: Desde la consola, en el directorio del proyecto, ejecuta:
+:arrow_forward: En la consola, ejecuta el siguiente comando para instalar las dependencias:
+
+```
+npm install
+```
+
+:arrow_forward: Para ejecutar la app de modo local, ejecuta el siguiente comando en la consola, desde el directorio del proyecto:
 ```
 npm start
 ```
+
 Ejecuta la app en modo development.\
 Abre http://localhost:3000 para verlo en tu navegador.
 
@@ -71,3 +78,10 @@ Mientras este ejecutando, la página se actualizará con cada cambio que guardes
 </picture></a>
 
 ---
+
+Gracias por tu visita! 🌈
+Si te gustó dale ⭐
+
+🎇 GearLara 🎇 
+
+☺️ 👋
